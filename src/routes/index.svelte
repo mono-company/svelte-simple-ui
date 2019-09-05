@@ -3,7 +3,7 @@
     // Specific to styleguide
     import Sample from '../components/Styleguide/Sample.svelte';
     import Component from '../components/Styleguide/Component.svelte';
-    import Toc from '../components/Styleguide/Toc.svelte';
+    import AutoTableOfContents from '../components/Styleguide/AutoTableOfContents.svelte';
 
     // General UI
     import Alert from '../components/UI/Alert.svelte';
@@ -46,221 +46,220 @@
 </svelte:head>
 
 
-<div id="styleguide" class="content">
-    <GridLayout>
-        <GridItem>
-            <Spacer side="top">
-                <Toc />
-            </Spacer>
-        </GridItem>
-        <GridItem>
-
+<GridLayout>
+    <GridItem>
+        <Spacer side="top">
+            <Content>
+                <h3>Table of Contents</h3>
+            </Content>
+            <AutoTableOfContents />
+        </Spacer>
+    </GridItem>
+    <GridItem>
+        <Content>
             <h1>Svelte Simple UI</h1>
             <p>An attempt at a simple UI framework with Svelte.</p>
+        </Content>
+
+        <div id="components" class="content">
+
+            <Component>
+
+                <h2>Alerts</h2>
+
+                <h3>Skins</h3>
+                <h4>Default</h4>
+                <Sample>
+                    <Alert>I am a default alert.</Alert>
+                </Sample>
+                <h4>Error</h4>
+                <Sample>
+                    <Alert type="error">I am an error message.</Alert>
+                </Sample>
+                <h4>Success</h4>
+                <Sample>
+                    <Alert type="success">I am a success message.</Alert>
+                </Sample>
+
+                <h3>Types</h3>
+                <h4>Normal</h4>
+                <Sample>
+                    <Alert>Hey, I don't have any options.</Alert>
+                </Sample>
+                <h4>Dismissible</h4>
+                <Sample>
+                    <Alert dismissible>Hey, I am dismissible.</Alert>
+                </Sample>
+            </Component>
 
 
-            <div id="components">
+            <Component>
+                <h2>Buttons</h2>
+                <h3>Types</h3>
+                <h4>Icon only</h4>
+                <Sample>
+                    <Button icon="close" layout="icon-only">Close</Button>
+                </Sample>
+                <h4>Icon and label</h4>
+                <Sample>
+                    <Button icon="close">Close</Button>
+                    <Button icon="add">Add</Button>
+                    <Button icon="remove">Remove</Button>
+                    <Button icon="delete">Delete</Button>
+                    <Button icon="question">Help</Button>
+                </Sample>
+            </Component>
 
-                <Component>
+            <Component>
 
-                    <h2>Alerts</h2>
+                <h2>Inputs</h2>
 
-                    <h3>Skins</h3>
-                    <h4>Default</h4>
-                    <Sample>
-                        <Alert>I am a default alert.</Alert>
-                    </Sample>
-                    <h4>Error</h4>
-                    <Sample>
-                        <Alert type="error">I am an error message.</Alert>
-                    </Sample>
-                    <h4>Success</h4>
-                    <Sample>
-                        <Alert type="success">I am a success message.</Alert>
-                    </Sample>
+                <h3>Text</h3>
 
-                    <h3>Types</h3>
-                    <h4>Normal</h4>
-                    <Sample>
-                        <Alert>Hey, I don't have any options.</Alert>
-                    </Sample>
-                    <h4>Dismissible</h4>
-                    <Sample>
-                        <Alert dismissible>Hey, I am dismissible.</Alert>
-                    </Sample>
-                </Component>
+                <Sample>
+                    <Input value="Test" />
+                </Sample>
 
+                <h3>Color</h3>
+                <Sample>
+                    <InputColor value="#FF0000" />
+                </Sample>
 
-                <Component>
-                    <h2>Buttons</h2>
-                    <h3>Types</h3>
-                    <h4>Icon only</h4>
-                    <Sample>
-                        <Button icon="close" layout="icon-only">Close</Button>
-                    </Sample>
-                    <h4>Icon and label</h4>
-                    <Sample>
-                        <Button icon="close">Close</Button>
-                        <Button icon="add">Add</Button>
-                        <Button icon="remove">Remove</Button>
-                        <Button icon="delete">Delete</Button>
-                        <Button icon="question">Help</Button>
-                    </Sample>
-                </Component>
+            </Component>
 
-                <Component>
+            <Component>
 
-                    <h2>Inputs</h2>
+                <h2>Box</h2>
+                <Sample>
+                    <Box>I am a box.</Box>
+                </Sample>
 
-                    <h3>Text</h3>
+            </Component>
 
-                    <Sample>
-                        <Input value="Test" />
-                    </Sample>
+            <Component>
+                <h2>Blank slate</h2>
+                <Sample>
+                    <Blankslate>I am a blank slate. Use me when no content is available.</Blankslate>
+                </Sample>
+            </Component>
 
-                    <h3>Color</h3>
-                    <Sample>
-                        <InputColor value="#FF0000" />
-                    </Sample>
-
-                </Component>
-
-                <Component>
-
-                    <h2>Box</h2>
-                    <Sample>
-                        <Box>I am a box.</Box>
-                    </Sample>
-
-                </Component>
-
-                <Component>
-                    <h2>Blank slate</h2>
-                    <Sample>
-                        <Blankslate>I am a blank slate. Use me when no content is available.</Blankslate>
-                    </Sample>
-                </Component>
-
-                <Component>
-                    <h2>Panels</h2>
-                    <p>Use panels to easily create layouts.</p>
-                    <Sample>
+            <Component>
+                <h2>Panels</h2>
+                <p>Use panels to easily create layouts.</p>
+                <Sample>
+                    <Panel>
+                        <PanelHeader title="Panel header" />
+                        <PanelBody>
+                            <p>I am HTML content.</p>
+                        </PanelBody>
+                    </Panel>
+                </Sample>
+                <Sample>
+                    <PanelRow panelCount="2'">
                         <Panel>
                             <PanelHeader title="Panel header" />
                             <PanelBody>
                                 <p>I am HTML content.</p>
                             </PanelBody>
                         </Panel>
-                    </Sample>
-                    <Sample>
-                        <PanelRow panelCount="2'">
-                            <Panel>
-                                <PanelHeader title="Panel header" />
-                                <PanelBody>
-                                    <p>I am HTML content.</p>
-                                </PanelBody>
-                            </Panel>
-                            <Panel>
-                                <PanelHeader title="Panel header" />
-                                <PanelBody>
-                                    <p>I am HTML content.</p>
-                                </PanelBody>
-                            </Panel>
-                        </PanelRow>
-                    </Sample>
-                    <Sample>
-                        <PanelRow>
-                            <Panel>
-                                <PanelHeader title="Panel header" />
-                                <PanelBody>
-                                    <p>I am HTML content.</p>
-                                </PanelBody>
-                            </Panel>
-                            <Panel>
-                                <PanelHeader title="Panel header" />
-                                <PanelBody>
-                                    <p>I am HTML content.</p>
-                                </PanelBody>
-                            </Panel>
-                            <Panel>
-                                <PanelHeader title="Panel header" />
-                                <PanelBody>
-                                    <p>I am HTML content.</p>
-                                </PanelBody>
-                            </Panel>
-                        </PanelRow>
-                    </Sample>
-                </Component>
+                        <Panel>
+                            <PanelHeader title="Panel header" />
+                            <PanelBody>
+                                <p>I am HTML content.</p>
+                            </PanelBody>
+                        </Panel>
+                    </PanelRow>
+                </Sample>
+                <Sample>
+                    <PanelRow>
+                        <Panel>
+                            <PanelHeader title="Panel header" />
+                            <PanelBody>
+                                <p>I am HTML content.</p>
+                            </PanelBody>
+                        </Panel>
+                        <Panel>
+                            <PanelHeader title="Panel header" />
+                            <PanelBody>
+                                <p>I am HTML content.</p>
+                            </PanelBody>
+                        </Panel>
+                        <Panel>
+                            <PanelHeader title="Panel header" />
+                            <PanelBody>
+                                <p>I am HTML content.</p>
+                            </PanelBody>
+                        </Panel>
+                    </PanelRow>
+                </Sample>
+            </Component>
 
-                <Component>
-                    <h2>Form group</h2>
-                    <h3>Standard</h3>
-                    <Sample>
-                        <FormGroupLayout>
-                            <FormGroup>
-                                <Label>Field name</Label>
-                                <Input value="Value" />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label>Field name</Label>
-                                <Input value="Value" />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label>Field name</Label>
-                                <Input value="Value" />
-                            </FormGroup>
-                        </FormGroupLayout>
-                    </Sample>
+            <Component>
+                <h2>Form group</h2>
+                <h3>Standard</h3>
+                <Sample>
+                    <FormGroupLayout>
+                        <FormGroup>
+                            <Label>Field name</Label>
+                            <Input value="Value" />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>Field name</Label>
+                            <Input value="Value" />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>Field name</Label>
+                            <Input value="Value" />
+                        </FormGroup>
+                    </FormGroupLayout>
+                </Sample>
 
-                    <h3>Horizontal</h3>
-                    <Sample>
-                        <FormGroupLayout type="horizontal">
-                            <FormGroup>
-                                <Label>Field name</Label>
-                                <Input value="Value" />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label>Field name</Label>
-                                <Input value="Value" />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label>Field name</Label>
-                                <Input value="Value" />
-                            </FormGroup>
-                        </FormGroupLayout>
-                    </Sample>
-                </Component>
+                <h3>Horizontal</h3>
+                <Sample>
+                    <FormGroupLayout type="horizontal">
+                        <FormGroup>
+                            <Label>Field name</Label>
+                            <Input value="Value" />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>Field name</Label>
+                            <Input value="Value" />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>Field name</Label>
+                            <Input value="Value" />
+                        </FormGroup>
+                    </FormGroupLayout>
+                </Sample>
+            </Component>
 
-                <Component>
+            <Component>
 
-                    <h2>Pickers</h2>
+                <h2>Pickers</h2>
 
-                    <h3>Single option</h3>
+                <h3>Single option</h3>
 
-                    <Sample>
-                        <Select>
-                            <option value="value-1">Value 1</option>
-                            <option value="value-2">Value 2</option>
-                            <option value="value-3">Value 3</option>
-                        </Select>
-                    </Sample>
+                <Sample>
+                    <Select>
+                        <option value="value-1">Value 1</option>
+                        <option value="value-2">Value 2</option>
+                        <option value="value-3">Value 3</option>
+                    </Select>
+                </Sample>
 
-                </Component>
+            </Component>
 
-                <Component>
-                    <h2>Icons</h2>
-                    <Sample>
-                        <Icon icon="close" />
-                        <Icon icon="add" />
-                        <Icon icon="remove" />
-                        <Icon icon="delete" />
-                        <Icon icon="question" />
-                    </Sample>
-                </Component>
+            <Component>
+                <h2>Icons</h2>
+                <Sample>
+                    <Icon icon="close" />
+                    <Icon icon="add" />
+                    <Icon icon="remove" />
+                    <Icon icon="delete" />
+                    <Icon icon="question" />
+                </Sample>
+            </Component>
 
-            </div>
-        </GridItem>
-    </GridLayout>
-
-
-</div>
+        </div>
+    </GridItem>
+</GridLayout>

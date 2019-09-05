@@ -1,5 +1,7 @@
 <script>
 
+    // Generate a table of contents automatically from a heading structure
+
     import { onMount } from 'svelte';
 
     function updateToc() {
@@ -60,35 +62,34 @@
 </script>
 
 <style>
-    :global(#toc) {
-        position: sticky;
-        top: 0;
-    }
+
     :global(#toc ol) {
         margin: 0;
         padding: 0;
     }
+
     :global(#toc ol ol) {
         margin: 0;
         padding: 0 0 0 2.4rem;
     }
+
     :global(#toc ol li) {
         list-style: none;
         margin: 0;
         padding: 0;
     }
+
     :global(#toc a) {
         display: block;
         padding: 0.6rem;
         text-decoration: none;
         color: #333;
     }
+
     :global(#toc a:hover) {
         background: #EEE;
     }
 
 </style>
 
-<div id="toc">
-    <h3>Table of Contents</h3>
-</div>
+<div id="toc"></div>
